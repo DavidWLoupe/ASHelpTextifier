@@ -3,6 +3,7 @@ import os
 import shutil
 import xml.etree.ElementTree as ET
 import re
+import html2text
 
 DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
 CONTENT_FILENAME = "brhelpcontent.xml"
@@ -12,6 +13,17 @@ OUTPUT_DIR = "BrHelpDetransmogrified"
 
 
 baseDirAbsPath = DEFAULT_DATA_DIR
+
+
+# Ref: https://github.com/Alir3z4/html2text/blob/master/docs/usage.md
+def parse(htmlSrc: str):
+    h = html2text.HTML2Text()
+    h.ignore_links = True
+    h.ignore_images = True
+    h.ignore_tables = True
+    h.ignore_emphasis = True
+    return h.handle(htmlSrc)
+
 
 def deleteFolder(path: str):
     dirAbsPath = os.path.abspath(path)
@@ -53,9 +65,9 @@ def processNode(node, path, orderID, tocPath):
                 # Create file inside folder with contents of Section Article
                 contentFile = os.path.join(baseDirAbsPath, node.attrib["File"])
                 newFile = os.path.join(newPath, "_SECTION " + textToValidDir(node.attrib["Text"]) + ".txt")
-                with open(newFile, 'w+') as n:
-                    with open(contentFile) as c: 
-                        n.write(c.read())
+                with open(newFile, 'w+', encoding="utf-8") as n:
+                    with open(contentFile, 'r', encoding="utf-8") as c: 
+                        n.write(parse(c.read()))
                 
                 # Create file with Table of Contents path as content (since it cannot be in folder names due to path length limits)
                 tocFile = os.path.join(newPath, "_TOC.txt")
@@ -75,10 +87,9 @@ def processNode(node, path, orderID, tocPath):
 
                 contentFile = os.path.join(baseDirAbsPath, node.attrib["File"])
                 newFile = os.path.join(path, str(orderID) + ' ' + textToValidDir(node.attrib["Text"]) + ".txt")
-                with open(newFile, 'w+') as n:
-                    with open(contentFile) as c: 
-                        n.write(c.read())
-
+                with open(newFile, 'w+', encoding="utf-8") as n:
+                    with open(contentFile, 'r', encoding="utf-8") as c: 
+                        n.write(parse(c.read()))
 
         else:
             print("ERROR: Section or Page did not have required attributes")
