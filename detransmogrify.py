@@ -34,9 +34,9 @@ def processNode(node, path, orderID, tocPath):
 
 
     if 'Text' in node.attrib:
-        print(node.attrib['Text'])
+        print(tocPath + '/' + node.attrib['Text'])
     else:
-        print("<no text ", node.tag, ">")
+        print(tocPath + '/' + "<no Text ", node.tag, ">")
     
 
 
