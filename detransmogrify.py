@@ -57,6 +57,13 @@ def processNode(node, path, orderID, tocPath):
                     with open(contentFile) as c: 
                         n.write(c.read())
                 
+                # Create file with Table of Contents path as content (since it cannot be in folder names due to path length limits)
+                tocFile = os.path.join(newPath, "_TOC.txt")
+                with open(tocFile, 'w+') as t:
+                    t.write("Table of Contents path:\n")
+                    t.write(tocPath + '/\n\n')
+                    t.write("Section Name:\n" + node.attrib["Text"] + "\n")
+
                 # Recursively process each node's children
                 for i,child in enumerate(node):
                     processNode(child, newPath, i, tocPath + '/' + node.attrib["Text"])
