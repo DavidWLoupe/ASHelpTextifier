@@ -30,7 +30,7 @@ def textToValidDir(text: str):
 
     return re.sub(r'[^\w &\-\+=,\(\)\{\}]+', r'_', text)
 
-def processNode(node, path):
+def processNode(node, path, orderID, tocPath):
 
 
     if 'Text' in node.attrib:
@@ -47,26 +47,25 @@ def processNode(node, path):
             if node.tag == "Section": 
                 
                 # create folder inside path
-                newPath = os.path.join(path, textToValidDir(node.attrib["Text"]))
+                newPath = os.path.join(path, str(orderID))
                 os.mkdir(newPath)
                 
                 # Create file inside folder with contents of Section Article
                 contentFile = os.path.join(baseDirAbsPath, node.attrib["File"])
-                newFile = os.path.join(newPath, "_SectionContent")
+                newFile = os.path.join(newPath, "_SECTION " + textToValidDir(node.attrib["Text"]) + ".txt")
                 with open(newFile, 'w+') as n:
                     with open(contentFile) as c: 
                         n.write(c.read())
                 
                 # Recursively process each node's children
-                for child in node:
-                    processNode(child, newPath)
-                pass
+                for i,child in enumerate(node):
+                    processNode(child, newPath, i, tocPath + '/' + node.attrib["Text"])
 
 
             if node.tag == "Page":
 
                 contentFile = os.path.join(baseDirAbsPath, node.attrib["File"])
-                newFile = os.path.join(path, textToValidDir(node.attrib["Text"]))
+                newFile = os.path.join(path, str(orderID) + ' ' + textToValidDir(node.attrib["Text"]) + ".txt")
                 with open(newFile, 'w+') as n:
                     with open(contentFile) as c: 
                         n.write(c.read())
@@ -108,8 +107,8 @@ if __name__=="__main__":
 
     # Process 
     # Note: root node's children are top-level help folders
-    for topLevelFolderNode in root:
-        processNode(topLevelFolderNode, outputDirAbsPath)
+    for i,topLevelFolderNode in enumerate(root):
+        processNode(topLevelFolderNode, outputDirAbsPath, i, '')
 
 
 
