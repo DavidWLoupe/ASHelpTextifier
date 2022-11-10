@@ -10,10 +10,21 @@ DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
 # CONTENT_FILENAME = "brhelpcontent_tiny.xml"
 CONTENT_FILENAME = "brhelpcontent_small.xml"
 OUTPUT_DIR = "BrHelpDetransmogrified"
-
+PATH_AND_FILE_LOG = "paths_and_text.csv"
 
 baseDirAbsPath = DEFAULT_DATA_DIR
 
+
+try:
+    os.remove(PATH_AND_FILE_LOG)
+except OSError:
+    pass
+
+
+def handleError(error):
+    # print(error)
+    with open("errors.txt", 'a') as e:
+        e.write(error + '\n')
 
 # Ref: https://github.com/Alir3z4/html2text/blob/master/docs/usage.md
 def parse(htmlSrc: str):
@@ -39,8 +50,26 @@ def deleteFolder(path: str):
 def textToValidDir(text: str):
     # Remove characters that are not a-z A-Z 0-9, '_'
     # https://kb.globalscape.com/Knowledgebase/10460/What-are-acceptable-characters-for-WAFSCDP-file-and-folder-names
-
     return re.sub(r'[^\w &\-\+=,\(\)\{\}]+', r'_', text)
+
+
+def pageTitleShorten(text: str):
+
+    # Handle error types (e.g. "-10280038: asdf asdf adsf sadf asdf adsf asdf asdf asd asdf sadf")
+    modified = re.sub(r'(-?\d{8,}:.{10}).{10,}', r'\1 {truncated}' , text)
+    
+    
+    # Limit file length to 50
+    if len(modified) > 50:
+        modified = modified[0:50]
+
+    return modified
+
+
+def cleanText(text):
+    # Replaces non-space whitespace characters with space char
+    return re.sub(r'[\r\n\t]', r' ', text)
+
 
 def processNode(node, path, orderID, tocPath):
 
@@ -53,8 +82,20 @@ def processNode(node, path, orderID, tocPath):
 
     if (node.tag == "Section" or node.tag == "Page"):
 
+
+
         if {'Text', 'File', 'Id'} <= node.attrib.keys():
-            
+
+            nodeTextClean = cleanText(node.attrib["Text"])
+
+            # Record all paths and text, for length and trunction analysis
+            with open(PATH_AND_FILE_LOG, 'a', encoding="utf-8") as l:
+                l.write(str(len(tocPath)) + '\t')
+                l.write(tocPath + '\t')
+                l.write(str(len(nodeTextClean)) + '\t')
+                l.write(nodeTextClean + '\n')
+
+
             if node.tag == "Section": 
                 
                 # create folder inside path
@@ -63,7 +104,7 @@ def processNode(node, path, orderID, tocPath):
                 
                 # Create file inside folder with contents of Section Article
                 contentFile = os.path.join(baseDirAbsPath, node.attrib["File"])
-                newFile = os.path.join(newPath, "_SECTION " + textToValidDir(node.attrib["Text"]) + ".info")
+                newFile = os.path.join(newPath, "_SECTION " + textToValidDir(nodeTextClean) + ".info")
                 with open(newFile, 'w+', encoding="utf-8") as n:
                     try:
                         with open(contentFile, 'r', encoding="utf-8") as c: 
@@ -71,7 +112,7 @@ def processNode(node, path, orderID, tocPath):
                             n.write("# It contains the content of the folder's own help article\n#\n")
                             n.write(parse(c.read()))
                     except:
-                        print("UNABLE TO OPEN FILE: <" + contentFile + "> for TOC doc <" + tocPath + node.attrib['Text'] + '>')
+                        handleError("UNABLE TO OPEN FILE: <" + contentFile + "> for TOC doc <" + tocPath + node.attrib['Text'] + '>')
                 
                 # Create file with Table of Contents path as content (since it cannot be in folder names due to path length limits)
                 tocFile = os.path.join(newPath, "_TOC.info")
@@ -81,7 +122,7 @@ def processNode(node, path, orderID, tocPath):
                     t.write("# Table of Contents path:\n")
                     t.write("# " + tocPath + '/\n#\n')
                     t.write("# Section Name:\n")
-                    t.write("# " + node.attrib["Text"] + "\n#\n")
+                    t.write("# " + nodeTextClean + "\n#\n")
                     t.write("# Pages and subsections:\n")
                     for i,child in enumerate(node):
                         if 'Text' in child.attrib:
@@ -90,15 +131,15 @@ def processNode(node, path, orderID, tocPath):
                             elif child.tag == 'Page':
                                 t.write("# PAGE "+ str(i) +":       \t" + child.attrib["Text"] + "\n")
 
-                # Recursively process each node's children
+                # Recursively process each node's children (this is where the magic happens)
                 for i,child in enumerate(node):
-                    processNode(child, newPath, i, tocPath + '/' + node.attrib["Text"])
+                    processNode(child, newPath, i, tocPath + '/' + nodeTextClean)
 
 
             if node.tag == "Page":
 
                 contentFile = os.path.join(baseDirAbsPath, node.attrib["File"])
-                newFile = os.path.join(path, str(orderID) + ' ' + textToValidDir(node.attrib["Text"]) + ".txt")
+                newFile = os.path.join(path, str(orderID) + ' ' + textToValidDir(pageTitleShorten(nodeTextClean)) + ".txt")
                 with open(newFile, 'w+', encoding="utf-8") as n:
                     try:
                         with open(contentFile, 'r', encoding="utf-8") as c: 
@@ -110,11 +151,10 @@ def processNode(node, path, orderID, tocPath):
                             n.write("#\n")
                             n.write(parse(c.read()))
                     except:
-                        print("UNABLE TO OPEN FILE: <" + contentFile + "> for TOC doc <" + tocPath + node.attrib['Text'] + '>')
+                        handleError("UNABLE TO OPEN FILE: <" + contentFile + "> for TOC doc <" + tocPath + node.attrib['Text'] + '>')
 
         else:
-            print("ERROR: Section or Page did not have required attributes")
-
+            handleError("ERROR: Section or Page did not have required attributes")
 
     else:
         # node is tagged with neither Page nor Section
@@ -141,17 +181,17 @@ if __name__=="__main__":
     root = tree.getroot()
 
     # Delete previous implementation
+    print("Deleting existing folder of detransmogrified text...")
     outputDirAbsPath = os.path.abspath(OUTPUT_DIR)
     deleteFolder(outputDirAbsPath)
     os.mkdir(outputDirAbsPath)
 
-
-    # Process 
-    # Note: root node's children are top-level help folders
+    # Process Each node (each node is either a Section or a Page)
+    # Note: root node's children are top-level folders in Help
     for i,topLevelFolderNode in enumerate(root):
         processNode(topLevelFolderNode, outputDirAbsPath, i, 'Help')
 
-
+    print("DETRANSMOGRIFICATION COMPLETE")
 
 
 
