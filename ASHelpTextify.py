@@ -7,12 +7,13 @@ import html2text
 from bs4 import UnicodeDammit
 
 DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
-# CONTENT_FILENAME = "brhelpcontent.xml"
+CONTENT_FILENAME = "brhelpcontent.xml"
 # CONTENT_FILENAME = "brhelpcontent_tiny.xml"
-CONTENT_FILENAME = "brhelpcontent_small.xml"
+# CONTENT_FILENAME = "brhelpcontent_small.xml"
 OUTPUT_DIR_SUFFIX = "Help_Textified"
 PATH_AND_TEXT_LOG_FILENAME = "length_study/paths_and_text.csv"
-PATH_AND_TEXT_LOG_ENABLE = True
+PATH_AND_TEXT_LOG_ENABLE = False
+PRINT_PROCESS_LOCATION = True
 ERROR_LOG = "errors.txt"
 
 baseDirAbsPath = DEFAULT_DATA_DIR
@@ -74,7 +75,9 @@ def processNode(node, path, orderID, tocPath):
         if {'Text', 'File', 'Id'} <= node.attrib.keys():
 
             nodeTextClean = cleanText(node.attrib["Text"])
-            print(tocPath + '/' + nodeTextClean)
+            
+            if PRINT_PROCESS_LOCATION:
+                print(tocPath + '/' + nodeTextClean)
 
             if PATH_AND_TEXT_LOG_ENABLE:
                 # Record all paths and text, for length and trunction analysis
