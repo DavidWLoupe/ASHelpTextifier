@@ -12,19 +12,15 @@ DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
 CONTENT_FILENAME = "brhelpcontent_small.xml"
 OUTPUT_DIR = "BrHelpDetransmogrified"
 PATH_AND_FILE_LOG = "paths_and_text.csv"
+ERROR_LOG = "errors.txt"
 
 baseDirAbsPath = DEFAULT_DATA_DIR
 
 
-try:
-    os.remove(PATH_AND_FILE_LOG)
-except OSError:
-    pass
-
 
 def handleError(error):
     # print(error)
-    with open("errors.txt", 'a') as e:
+    with open(ERROR_LOG, 'a', encoding="utf-8") as e:
         e.write(error + '\n')
 
 # Ref: https://github.com/Alir3z4/html2text/blob/master/docs/usage.md
@@ -59,7 +55,6 @@ def pageTitleShorten(text: str):
     # Handle error types (e.g. "-10280038: asdf asdf adsf sadf asdf adsf asdf asdf asd asdf sadf")
     modified = re.sub(r'(-?\d{8,}:.{10}).{10,}', r'\1 {truncated}' , text)
     
-    
     # Limit file length to 50
     if len(modified) > 50:
         modified = modified[0:50]
@@ -74,20 +69,12 @@ def cleanText(text):
 
 def processNode(node, path, orderID, tocPath):
 
-    # Print Path to function
-    if 'Text' in node.attrib:
-        print(tocPath + '/' + node.attrib['Text'])
-    else:
-        print(tocPath + '/' + "<no Text ", node.tag, ">")
-
-
     if (node.tag == "Section" or node.tag == "Page"):
-
-
 
         if {'Text', 'File', 'Id'} <= node.attrib.keys():
 
             nodeTextClean = cleanText(node.attrib["Text"])
+            print(tocPath + '/' + nodeTextClean)
 
             # Record all paths and text, for length and trunction analysis
             with open(PATH_AND_FILE_LOG, 'a', encoding="utf-8") as l:
@@ -168,6 +155,24 @@ def processNode(node, path, orderID, tocPath):
         pass
 
 
+def cleanPreviousFiles():
+    
+    # Delete previous implementation
+    print("Deleting existing folder of detransmogrified text...")
+    outputDirAbsPath = os.path.abspath(OUTPUT_DIR)
+    deleteFolder(outputDirAbsPath)
+    os.mkdir(outputDirAbsPath)
+
+    try:
+        os.remove(PATH_AND_FILE_LOG)
+    except OSError:
+        pass
+
+    try:
+        os.remove(ERROR_LOG)
+    except OSError:
+        pass
+
 
 if __name__=="__main__":
     print("Executing detransmogrify main...")
@@ -182,16 +187,12 @@ if __name__=="__main__":
     pfContentXml = os.path.join(baseDirAbsPath, CONTENT_FILENAME)
     print(pfContentXml)
 
-    
+
+    cleanPreviousFiles()
+
     # Parse Tree!
     tree = ET.parse(pfContentXml)
     root = tree.getroot()
-
-    # Delete previous implementation
-    print("Deleting existing folder of detransmogrified text...")
-    outputDirAbsPath = os.path.abspath(OUTPUT_DIR)
-    deleteFolder(outputDirAbsPath)
-    os.mkdir(outputDirAbsPath)
 
     # Process Each node (each node is either a Section or a Page)
     # Note: root node's children are top-level folders in Help
