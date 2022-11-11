@@ -51,15 +51,7 @@ def textToValidDir(text: str):
 
 
 def pageTitleShorten(text: str):
-
-    # Handle error types (e.g. "-10280038: asdf asdf adsf sadf asdf adsf asdf asdf asd asdf sadf")
-    modified = re.sub(r'(-?\d{8,}:.{10}).{10,}', r'\1 {truncated}' , text)
-    
-    # Limit file length to 50
-    if len(modified) > 50:
-        modified = modified[0:50]
-
-    return modified
+    return re.sub(r'(.{38}).{12,}', r'\1 {truncated}' , text)
 
 
 def cleanText(text):
