@@ -147,11 +147,10 @@ def processNode(node, path, orderID, tocPath):
         pass
 
 
-def cleanPreviousFiles():
+def cleanPreviousFiles(outputDirAbsPath):
     
     # Delete previous implementation
     print("Deleting existing folder of detransmogrified text...")
-    outputDirAbsPath = os.path.abspath(OUTPUT_DIR)
     deleteFolder(outputDirAbsPath)
     os.mkdir(outputDirAbsPath)
 
@@ -173,14 +172,13 @@ if __name__=="__main__":
     userSelectedPath = askdirectory(title='Select Help Data folder containing brhelpcontent.xml', initialdir=DEFAULT_DATA_DIR) # shows dialog box and return the path
     print("User selected path:", userSelectedPath) 
 
-
     # Formalize path and file with os.path
     baseDirAbsPath = os.path.abspath(userSelectedPath)
     pfContentXml = os.path.join(baseDirAbsPath, CONTENT_FILENAME)
+    outputDirAbsPath = os.path.abspath(OUTPUT_DIR)
     print(pfContentXml)
 
-
-    cleanPreviousFiles()
+    cleanPreviousFiles(outputDirAbsPath)
 
     # Parse Tree!
     tree = ET.parse(pfContentXml)
