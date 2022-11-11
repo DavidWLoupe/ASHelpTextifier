@@ -4,6 +4,7 @@ import shutil
 import xml.etree.ElementTree as ET
 import re
 import html2text
+from bs4 import UnicodeDammit
 
 DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
 # CONTENT_FILENAME = "brhelpcontent.xml"
