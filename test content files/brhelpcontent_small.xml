@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help Language="en" Home="as/as_start.htm" HowToUse="diagnostics_support/helponhelp/help.htm" Context="Automation Help 4.10.2.38 " ContextDetail="" XmlVersion="1.3">
+  <Section Text="Automation software" File="as/as_start.htm" Id="ff631f48-040e-485b-abd2-e6d69dcaa054">
+    <Page Text="Automation Studio start page" File="diagnostics_support/helponhelp/help/helponstartpage.htm" Id="8cc566cc-1ac7-4ec3-814c-038c64fc2cd7">
+      <Identifiers>
+        <HelpID Value="3002099" />
+      </Identifiers>
+    </Page>
+    <Section Text="How do I use this help documentation?" File="diagnostics_support/helponhelp/help.htm" Id="130ea524-7456-49d2-8014-fcd85e13a94b">
+      <Identifiers>
+        <HelpID Value="131172" />
+      </Identifiers>
+      <Page Text="The B&amp;R Help Explorer" File="diagnostics_support/helponhelp/help/helpexplorer.htm" Id="05bb9e2d-22eb-4abc-ab2d-67dcf3ecd9c7" />
+      <Page Text="Working with the Help Explorer" File="diagnostics_support/helponhelp/help/helpwork.htm" Id="135e3179-04ca-4049-9545-6c0a0d40fec3" />
+      <Page Text="Navigating in the Help Explorer" File="diagnostics_support/helponhelp/help/helpnavigation.htm" Id="6bdea14f-741c-4b5b-b03b-f3339b6979f1" />
+      <Page Text="Searching in the Help Explorer" File="diagnostics_support/helponhelp/help/helpsearch.htm" Id="f816d2de-7b60-4140-a25e-ae658d471eb3" />
+      <Page Text="Working with multiple help pages" File="diagnostics_support/helponhelp/help/helptabs.htm" Id="90284005-ed9e-4126-94d3-0dc8d6c27e78" />
+      <Page Text="Help favorites" File="diagnostics_support/helponhelp/help/helpfavorites.htm" Id="58aec804-3607-43d7-94e1-c30609fc3b03" />
+      <Page Text="Displaying terminology definitions with the glossary" File="diagnostics_support/helponhelp/help/helpglossar.htm" Id="1fff8ed0-c177-4077-aeb9-bd0cef56d46a" />
+      <Page Text="Printing in the Help Explorer" File="diagnostics_support/helponhelp/help/helpprint.htm" Id="0c5fb997-651d-4595-b869-183722ecde64" />
+      <Page Text="B&amp;R Tutorial Portal" File="diagnostics_support/helponhelp/br-tutorial-portal/br-tutorial-portal.html" Id="4abbb5c9-af4c-4c68-8a79-d5bddb2d067a" />
+    </Section>
+    <Section Text="Software installation" File="diagnostics_support/install/installation_main.html" Id="a0a9b1f6-0841-4cf8-a437-930d03189d55">
+      <Page Text="Supported operating systems" File="diagnostics_support/install/supported_operating_systems.html" Id="c8e48646-b598-4994-a28a-aa5ec9dd9a38" />
+      <Page Text="Limitations for virtual machines" File="diagnostics_support/install/virtualmachine.html" Id="47caaf3d-4d91-4e48-8ed8-457e2f1f0be0" />
+      <Page Text="Administrator rights for B&amp;R software" File="diagnostics_support/install/admin_rights_overview.html" Id="028b28eb-b8eb-4867-a8dc-e0f86c629af0" />
+      <Section Text="Automation Studio" File="diagnostics_support/install/installation_as_main.html" Id="79436ae6-9359-4226-9d4c-0450b2000375">
+        <Section Text="System requirements" File="diagnostics_support/install/system_requirements.html" Id="fe65a636-1979-4ff8-b510-f7455ced1b0d">
+          <Page Text="Automation Studio 4.9" File="diagnostics_support/install/sys_requirements_43.html" Id="e4c92c6f-870c-451a-b625-3d5b83f3162d" />
+          <Page Text="Automation Studio 4.8" File="diagnostics_support/install/sys_requirements_43-2.html" Id="62ccb1fd-461a-4a56-a007-773be0074507" />
+          <Page Text="Automation Studio 4.7" File="diagnostics_support/install/sys_requirements_43-3.html" Id="a364de97-64b1-42e1-be6d-09f15bd6b43f" />
+          <Page Text="Automation Studio 4.6" File="diagnostics_support/install/sys_requirements_43-4.html" Id="a312b7d8-7b25-48ee-8b7b-3cbd85a06e42" />
+          <Page Text="Automation Studio 4.5" File="diagnostics_support/install/sys_requirements_43-5.html" Id="c9573a41-2dae-4340-9689-5b6e3d54324a" />
+          <Page Text="Automation Studio 4.4" File="diagnostics_support/install/sys_requirements_43-6.html" Id="72847a01-0e5f-461b-8bcf-a859c78a942c" />
+          <Page Text="Automation Studio 4.3" File="diagnostics_support/install/sys_requirements_43-7.html" Id="163b4a9a-94b1-43af-8c79-21717e62e1c9" />
+          <Page Text="Automation Studio 4.2" File="diagnostics_support/install/sys_requirements_42.html" Id="ceb2cd8e-5f5a-486a-8fae-ded90d5ce143" />
+          <Page Text="Automation Studio 4.1" File="diagnostics_support/install/sys_requirements_41.html" Id="ab1d7131-5407-45e9-a227-46493325066f" />
+          <Page Text="Automation Studio 4.0" File="diagnostics_support/install/sys_requirements_40.html" Id="e868ded8-fa24-4653-bb23-93992592c5c4" />
+          <Page Text="Automation Studio 3.0.90" File="diagnostics_support/install/sys_requirements_3090.html" Id="5b6a6b4f-15bd-43a5-8925-e16827de5583" />
+          <Page Text="Automation Studio 3.0.81" File="diagnostics_support/install/sys_requirements_3081.html" Id="0d19a9e1-75ef-460d-b4d2-fa5320250714" />
+          <Page Text="Automation Studio 3.0.80" File="diagnostics_support/install/sys_requirements_3080.html" Id="3368261f-35e1-41cf-8498-b5cc66ed531e" />
+          <Page Text="Automation Studio 3.0.71" File="diagnostics_support/install/sys_requirements_3071.html" Id="10f1b8f1-a1fd-4dfd-a3da-510a6672b3aa" />
+          <Page Text="Automation Studio 2.7" File="diagnostics_support/install/sys_requirements_27.html" Id="1d6c00b9-37f7-47c6-b409-d06849c012b1" />
+          <Page Text="Automation Studio &lt; 2.7" File="diagnostics_support/install/sys_requirements_lt27.html" Id="60844e55-7619-4099-939e-0e64265b928c" />
+        </Section>
+        <Section Text="Installation" File="diagnostics_support/install/installationsarten_as_main.html" Id="57ec0f15-2408-4fe8-9727-1e23a26a1795">
+          <Page Text="Classic" File="diagnostics_support/install/installation_p1.html" Id="582452e6-316b-44ac-82eb-09b0c4756f2f" />
+          <Page Text="Adding software components" File="diagnostics_support/install/installation_add_comp_autostudio.html" Id="eb098761-dbce-4460-aaf5-72760174f47f" />
+        </Section>
+        <Section Text="Licensing" File="diagnostics_support/install/installation_as_license.html" Id="642033b0-187b-4bbe-9cbd-122dac42cde9">
+          <Section Text="Automation Studio" File="diagnostics_support/install/installation_p5.html" Id="b19b5eef-5554-429b-9275-e9565f7e3d52">
+            <Page Text="Offline licensing" File="diagnostics_support/install/offline_licensing.html" Id="dc7d9a91-d470-46a6-925c-4a28c3873d2a" />
+          </Section>
+          <Page Text="Automation Studio (Legacy)" File="diagnostics_support/install/installation_p6.html" Id="2b086970-5bd8-4466-a826-8b814af2bcc4" />
+        </Section>
+        <Page Text="Uninstalling" File="diagnostics_support/install/uninstall_autostudio.html" Id="63e58f2f-12e3-4095-b04d-7a5ec133939f" />
+        <Section Text="Installation notes" File="diagnostics_support/install/setup_infos_as.html" Id="fe314548-58ca-4687-b620-8682b8068028">
+          <Page Text="Automation Help installer" File="diagnostics_support/install/ah_setup.html" Id="ceca51c0-7266-40a3-be20-f7fd6aee789a" />
+          <Page Text="Automation Runtime installer" File="diagnostics_support/install/ar_setup.html" Id="2442ce6b-abf1-4682-adb3-2cb50758fd82" />
+          <Page Text="Automation Studio installer" File="diagnostics_support/install/as_setup.html" Id="80a725f1-0b0e-4fd0-a4bf-df679c0da0b8" />
+        </Section>
+      </Section>
+      <Section Text="PVI" File="diagnostics_support/install/installation_anet_main.html" Id="ed0d0a73-8143-420c-9240-fcfeea58db4f">
+        <Section Text="System requirements" File="diagnostics_support/install/system_requirements_anet_dev.html" Id="9ded35cb-6e1d-4f01-87b0-fd3f8b1f957a">
+          <Page Text="PVI 4.3 and later" File="diagnostics_support/install/sys_requirements_pvi46.html" Id="006d839f-721e-434e-9901-2b8ccdae611a" />
+          <Page Text="PVI 4.0 - 4.2" File="diagnostics_support/install/sys_requirements_pvi42.html" Id="5ca8f8b4-e0e2-4a57-8439-507e2173e01a" />
+        </Section>
+        <Section Text="Installation" File="diagnostics_support/install/installation_anet.html" Id="b5d9ad67-c388-4792-b8da-da8dac5dcf54">
+          <Page Text="Adding software components" File="diagnostics_support/install/installation_add_comp_autone.html" Id="4919c0de-62fc-4f9a-999e-97ccb3036a3e" />
+        </Section>
+        <Page Text="Uninstalling PVI" File="diagnostics_support/install/uninstall_autonet.html" Id="f3da6332-6c60-45f8-ad0c-5ad78b8a5ab0" />
+        <Page Text="PVI installer" File="diagnostics_support/install/pvi_setup.html" Id="246988fa-5916-488f-b688-efd16037bbea" />
+      </Section>
+      <Section Text="SafeDESIGNER" File="diagnostics_support/install/installation_sd_main.html" Id="0a9c6a8a-b335-4c44-978a-7d8711b3bd70">
+        <Section Text="System requirements" File="diagnostics_support/install/systemrequirements.html" Id="c378efb8-4e79-41a9-9184-d85bf1c5e022">
+          <Page Text="SafeDESIGNER 4.3" File="diagnostics_support/install/sys_requirements_sd421.html" Id="33f9daaf-ab74-4509-9840-0db0c4793265" />
+          <Page Text="SafeDESIGNER 4.2" File="diagnostics_support/install/sys_requirements_sd421-2.html" Id="ef30cc0b-130d-4e76-b8e3-4bae53406d88" />
+        </Section>
+        <Page Text="Installation" File="diagnostics_support/install/installation_sd.html" Id="f4cdedcc-e376-4851-b94b-eb513c69ca92" />
+        <Page Text="Licensing" File="diagnostics_support/install/license_sd.html" Id="4f44a3ce-b560-491e-9cb5-7dcf6a53261a" />
+        <Page Text="Uninstalling" File="diagnostics_support/install/uninstall_sd.html" Id="18cbc5a2-8908-4242-9b7c-a489f657ed41" />
+        <Page Text="SafeDESIGNER installer" File="diagnostics_support/install/sd_setup.html" Id="5d9577af-20e8-45d1-bae0-2a7a8e5863db" />
+      </Section>
+      <Section Text="Automation Studio Target for Simulink" File="diagnostics_support/install/installation_assimulink_main.html" Id="0850bc83-f62d-4b67-b127-e719fb867204">
+        <Page Text="Installation" File="diagnostics_support/install/installation_assimulink_installation.html" Id="7fd16828-3401-44f6-9b3d-37ea4e72c13a" />
+        <Page Text="Uninstalling" File="diagnostics_support/install/installation_assimulink_deinstallation.html" Id="9d27869c-f39b-46cb-8626-7c332e1475e8" />
+        <Page Text="Licensing" File="diagnostics_support/install/lizenzierung.html" Id="40733484-60af-405f-9841-0210117e21bb" />
+      </Section>
+    </Section>
+    <Section Text="Example projects" File="diagnostics_support/samples/samples.htm" Id="2d74f1e1-a9d0-4b0b-a6ff-6cc8db9deecf">
+      <Page Text="Example projects on the start page" File="diagnostics_support/samples/samples/samplesonstartpage.htm" Id="1eccfc12-bcf9-4157-b862-12f9ee79faed" />
+      <Section Text="CoffeeMachine" File="diagnostics_support/samples/samples/coffeemachine/sample_coffeemachine.html" Id="335dbb46-79f9-4f0b-a1c4-ab0d3b4bcd47">
+        <Page Text="Opening the project" File="diagnostics_support/samples/samples/coffeemachine/sample_coffeemachine_openproject.html" Id="0ed17525-8201-4dc6-a28e-28d21f86f4cc" />
+        <Page Text="Starting ARsim simulation" File="diagnostics_support/samples/samples/coffeemachine/sample_coffeemachine_ar000.html" Id="c373327d-89e8-412c-92e6-10e8f8f723ef" />
+        <Page Text="Configuring the online connection" File="diagnostics_support/samples/samples/coffeemachine/sample_coffeemachine_online.html" Id="74e1b26e-2481-4eac-8e1c-4911f48af4f2" />
+        <Page Text="Transferring the project" File="diagnostics_support/samples/samples/coffeemachine/sample_coffeemachine_transfer.html" Id="d986b6e6-daa1-4a08-9d63-f501d8f2be31" />
+        <Page Text="Establishing a VNC connection to ARsim" File="diagnostics_support/samples/samples/coffeemachine/sample_coffeemachine_vnc.html" Id="8b8dd6ae-7b66-41f8-afea-2f25c6f80a60" />
+        <Page Text="Operating the CoffeeMachine program" File="diagnostics_support/samples/samples/coffeemachine/sample_coffeemachine_operation.html" Id="5b36961e-19b2-4264-93c1-35f7e2fdea1f" />
+      </Section>
+      <Section Text="Basic safety project" File="diagnostics_support/samples/samples/safetybasisproject/sample_safetybasisproject.html" Id="9c9a3462-ba43-4e91-9600-a45b649f899d">
+        <Page Text="Opening the project" File="diagnostics_support/samples/samples/safetybasisproject/sample_safetybasisproject_openproject.html" Id="7828d38e-028f-4474-991e-9d3afe9fde27" />
+        <Page Text="Transferring the project" File="diagnostics_support/samples/samples/safetybasisproject/x20 konfiguration.html" Id="c014e846-47d0-4090-97f5-6ede13b979fc" />
+        <Page Text="Starting SafeDESIGNER" File="diagnostics_support/samples/samples/safetybasisproject/sample_safetybasisproject_startsd.html" Id="b692cca2-3a0d-4e05-8e17-279b3c26a257" />
+      </Section>
+      <Page Text="Communication with OPC UA client function blocks" File="diagnostics_support/samples/samples/opcuasample/sample_opcua.htm" Id="66af7920-c9d8-44f4-b548-527895e00ab5" />
+    </Section>
+    <Section Text="Version information" File="revinfos/asinfo.html" Id="0562d7f5-e2d7-4445-8342-547748e30239">
+      <Section Text="New functions in B&amp;R Automation Studio 4.10" File="revinfos/newfunctions/neue_funktionen_in_b_r_automation_studio_4.10.html" Id="020f0ca6-302b-487b-b77a-50eb7c22871b">
+        <Identifiers>
+          <HelpID Value="3002112" />
+        </Identifiers>
+        <Section Text="Automation Studio" File="revinfos/newfunctions/automation_studio.html" Id="31173ca5-b00d-4acf-9e8e-f05cd02b64b0">
+          <Page Text="Extended USB install drive creation" File="revinfos/newfunctions/erweiterungen_bei_der_erstellung_von_usb_installationssticks.html" Id="9a621524-cd37-41ee-a62d-13e75d4bbb08" />
+          <Page Text="Accelerated OPC UA build process" File="revinfos/newfunctions/beschleunigung_des_opc_ua_build_prozesses.html" Id="9ce0fb36-57f7-454e-8b99-71d411c02255" />
+          <Section Text="Upgrade dialog box" File="revinfos/newfunctions/upgrade_dialog.html" Id="f22a2504-3bd1-46ce-b3b3-d59fd39f4ab0">
+            <Page Text="New filter criterion &quot;Currently used&quot;" File="revinfos/newfunctions/neues_filterkriterium__currently_used_.html" Id="a7e1f9d0-2b82-4b56-b4da-2e66112c9fa8" />
+            <Page Text="Uniform display of &quot;Newest version&quot;" File="revinfos/newfunctions/vereinheitlichung_anzeige_der__newest_version_.html" Id="5126da75-2290-4890-91ea-054ad9607ff9" />
+          </Section>
+          <Page Text="Text editor for localizable texts" File="revinfos/newfunctions/texteditor_fur_lokalisierbare_texte.html" Id="1399b2f6-23a5-4952-87cd-b5fa4ca3affb" />
+          <Page Text="Speed Torque Chart support for ACOPOS P3" File="revinfos/newfunctions/speed_torque_chart_unterstutzung_fur_acopos_p3.html" Id="daf0d158-b5dd-4c90-8505-4a59130cbfbe" />
+          <Page Text="Multiline display of detailed information in the Logger" File="revinfos/newfunctions/mehrzeilige_anzeige_der_detailinformationen_im_logger.html" Id="687c9c08-88aa-43f6-98a2-e3bfaf6ca1e0" />
+        </Section>
+        <Section Text="Automation Runtime" File="revinfos/newfunctions/automation_runtime.html" Id="8cdac39c-d9fd-438f-8cb7-52fc5ec5ece3">
+          <Page Text="Libraries for PROFINET IO, EtherCAT and CANopen (netX) slaves" File="revinfos/newfunctions/bibliotheken_fur_die_slaves_von_profinet_io,_ethercat_und_canopen_(netx).html" Id="543af6b5-773f-456d-b3c0-370480c88c9a" />
+          <Page Text="Modbus function code 22 - Modbus server support" File="revinfos/newfunctions/modbus_function_code_22___modbus_server_unterstutzung.html" Id="c9fa874d-4ef1-411c-97e9-1b3d44b6dd90" />
+          <Page Text="X90CP17x DeviceID" File="revinfos/newfunctions/x90cp17x_deviceid.html" Id="5dc1a73c-33b8-4dc8-a585-9d64f3bf456e" />
+          <Page Text="Safe modular system - Hardening" File="revinfos/newfunctions/sicheres_modulsystem___hardening.html" Id="28fea5b2-e361-421e-8ac1-10d7d02a0428" />
+          <Page Text="MPC3100" File="revinfos/newfunctions/mpc3100.html" Id="a4472e2f-d895-4eab-bc68-91f65cf418a2" />
+        </Section>
+        <Section Text="B&amp;R Hypervisor" File="revinfos/newfunctions/b_r_hypervisor.html" Id="d146237d-e65b-4d73-b1cd-b4328a35d480">
+          <Page Text="Updated hyperthreading support" File="revinfos/newfunctions/erweiterung_der_unterstutzung_von_hyperthreading.html" Id="2258995d-36e9-4224-b8a4-3f95e62f16eb" />
+          <Page Text="API for rebooting and shutting down the complete system from the GPOS" File="revinfos/newfunctions/api_zum_reboot_und_zum_herunterfahren_des_gesamtsystems_aus_dem_gpos.html" Id="290f9fe3-e2b2-4d6b-9d1f-6aa2951c1453" />
+          <Page Text="MPC3100" File="revinfos/newfunctions/mpc3100_(hypervisor).html" Id="dfa93057-95c8-4bbe-8cca-b81ee34f22a7" />
+        </Section>
+      </Section>
+      <Page Text="Automation Software version overview" File="revinfos/versionoverview.html" Id="51b2a741-a05d-48c1-957c-2aa1ad5cc8d4" />
+      <Page Text="Upgrading a project to a higher AS version" File="revinfos/asinfo_projectupgrade.html" Id="f48ff5b3-b966-4662-a7f8-40a22481daf8">
+        <Identifiers>
+          <HelpID Value="3002110" />
+        </Identifiers>
+      </Page>
+      <Page Text="Revision information" File="revinfos/asinfo_links.html" Id="fdfdeec2-f84d-4bba-9dd9-9f64b3cab3dd" />
+      <Section Text="Hardware no longer supported" File="revinfos/notsupportedhw.html" Id="01ace817-4fa3-4a54-80a8-6564c862656a">
+        <Page Text="Automation Runtime 4.90" File="revinfos/4.9.html" Id="0d6debb8-2ed0-4655-964c-9bf067ff0862" />
+      </Section>
+    </Section>
+    <Section Text="Technology Guarding" File="technologyguarding/technologyguarding.html" Id="a2b8c7b9-9e30-488f-965a-a376c853ec24">
+      <Page Text="Introduction" File="technologyguarding/intro.html" Id="71062676-fbad-410a-ab88-b01bb214aa46" />
+      <Page Text="Compile a project" File="technologyguarding/projectbuild.html" Id="882e8421-9f23-4dd0-9245-739bacc910bb" />
+      <Section Text="Technology Guarding wizard" File="technologyguarding/techguardassist/techguardassist.html" Id="d0660123-12f8-4914-92bd-5ef1b710f030">
+        <Section Text="Installation" File="technologyguarding/techguardassist/installation.html" Id="23a1da70-a5a4-43eb-852f-7600e4e0e015">
+          <Section Text="The workspace" File="technologyguarding/techguardassist/workspace.html" Id="04a1df66-db56-4c35-b873-0e89d04e2d60">
+            <Page Text="Options" File="technologyguarding/techguardassist/option.html" Id="2a3f70ce-1afb-434b-9891-f938ca5d6db6" />
+          </Section>
+        </Section>
+        <Section Text="Display details" File="technologyguarding/techguardassist/detailviews.html" Id="b36fdf63-842c-456d-932e-9893c148f1a9">
+          <Page Text="Icon display" File="technologyguarding/techguardassist/shortage.html" Id="2e731174-11a6-4362-9f8f-98a57516856b" />
+          <Page Text="Display of missing/extra licenses" File="technologyguarding/techguardassist/remainder.html" Id="bd0888f9-dd7e-40ed-9f0e-6262c38fc616" />
+        </Section>
+        <Section Text="Operation (licensing)" File="technologyguarding/techguardassist/workspace_main.html" Id="25fb1fea-4c7f-45e5-b297-ee922767e7c5">
+          <Page Text="Online licensing on the dongle" File="technologyguarding/techguardassist/onlinelicense.html" Id="423b1a00-dd5e-464d-8de1-ef444fd26af7" />
+          <Page Text="Offline dongle licensing using a license file" File="technologyguarding/techguardassist/offlinelicensefile.html" Id="dc52cf5b-e20e-4a83-9824-318208e33057" />
+          <Page Text="Returning licenses" File="technologyguarding/techguardassist/returnlicenses.html" Id="321ab385-5ee0-410d-9b13-a39109bf5ed5" />
+          <Page Text="Licensing for redundant CPUs" File="technologyguarding/techguardassist/licenseredundancecpus.html" Id="d73d6d69-cdd8-45c2-b178-22a41371e8a6" />
+          <Page Text="Operating time counters" File="technologyguarding/techguardassist/counter.html" Id="58c48cb4-76bb-4b7f-a970-1045f4794057" />
+        </Section>
+      </Section>
+      <Page Text="Known problems" File="technologyguarding/technologyguardingknownissues.html" Id="868848c9-168a-4362-a177-0b8bbda6d764" />
+    </Section>
+  </Section>
+</Help>

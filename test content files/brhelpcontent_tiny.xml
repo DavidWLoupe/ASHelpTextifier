@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help Language="en" Home="as/as_start.htm" HowToUse="diagnostics_support/helponhelp/help.htm" Context="Automation Help 4.10.2.38 " ContextDetail="" XmlVersion="1.3">
+  <Section Text="Automation software" File="as/as_start.htm" Id="ff631f48-040e-485b-abd2-e6d69dcaa054">
+    <Page Text="Automation Studio start page" File="diagnostics_support/helponhelp/help/helponstartpage.htm" Id="8cc566cc-1ac7-4ec3-814c-038c64fc2cd7">
+      <Identifiers>
+        <HelpID Value="3002099" />
+      </Identifiers>
+    </Page>
+    <Section Text="How do I use this help documentation?" File="diagnostics_support/helponhelp/help.htm" Id="130ea524-7456-49d2-8014-fcd85e13a94b">
+      <Identifiers>
+        <HelpID Value="131172" />
+      </Identifiers>
+      <Page Text="The B&amp;R Help Explorer" File="diagnostics_support/helponhelp/help/helpexplorer.htm" Id="05bb9e2d-22eb-4abc-ab2d-67dcf3ecd9c7" />
+      <Page Text="Working with the Help Explorer" File="diagnostics_support/helponhelp/help/helpwork.htm" Id="135e3179-04ca-4049-9545-6c0a0d40fec3" />
+      <Page Text="Navigating in the Help Explorer" File="diagnostics_support/helponhelp/help/helpnavigation.htm" Id="6bdea14f-741c-4b5b-b03b-f3339b6979f1" />
+    </Section>
+  </Section>
+</Help>

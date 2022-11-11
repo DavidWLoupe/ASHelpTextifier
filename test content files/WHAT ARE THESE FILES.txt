@@ -1,0 +1,7 @@
+These files are reduced versions of the full xml file that outlines the whole Help Table of Contents
+
+The are useful when you only want to test the Texifier on a small content subset (so it won't take 2 hours)
+
+Copy these files into the same place as brhelpcontent.xml (e.g. C:\BrAutomation\AS410\Help-en\Data\) and modify the top of the textify python script to use.
+
+
