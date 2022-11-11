@@ -1,0 +1,123 @@
+4	Help	19	Automation software
+24	Help/Automation software	28	Automation Studio start page
+24	Help/Automation software	37	How do I use this help documentation?
+62	Help/Automation software/How do I use this help documentation?	21	The B&R Help Explorer
+62	Help/Automation software/How do I use this help documentation?	30	Working with the Help Explorer
+62	Help/Automation software/How do I use this help documentation?	31	Navigating in the Help Explorer
+62	Help/Automation software/How do I use this help documentation?	30	Searching in the Help Explorer
+62	Help/Automation software/How do I use this help documentation?	32	Working with multiple help pages
+62	Help/Automation software/How do I use this help documentation?	14	Help favorites
+62	Help/Automation software/How do I use this help documentation?	52	Displaying terminology definitions with the glossary
+62	Help/Automation software/How do I use this help documentation?	29	Printing in the Help Explorer
+62	Help/Automation software/How do I use this help documentation?	19	B&R Tutorial Portal
+24	Help/Automation software	21	Software installation
+46	Help/Automation software/Software installation	27	Supported operating systems
+46	Help/Automation software/Software installation	32	Limitations for virtual machines
+46	Help/Automation software/Software installation	37	Administrator rights for B&R software
+46	Help/Automation software/Software installation	17	Automation Studio
+64	Help/Automation software/Software installation/Automation Studio	19	System requirements
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.9
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.8
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.7
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.6
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.5
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.4
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.3
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.2
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.1
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 4.0
+84	Help/Automation software/Software installation/Automation Studio/System requirements	24	Automation Studio 3.0.90
+84	Help/Automation software/Software installation/Automation Studio/System requirements	24	Automation Studio 3.0.81
+84	Help/Automation software/Software installation/Automation Studio/System requirements	24	Automation Studio 3.0.80
+84	Help/Automation software/Software installation/Automation Studio/System requirements	24	Automation Studio 3.0.71
+84	Help/Automation software/Software installation/Automation Studio/System requirements	21	Automation Studio 2.7
+84	Help/Automation software/Software installation/Automation Studio/System requirements	23	Automation Studio < 2.7
+64	Help/Automation software/Software installation/Automation Studio	12	Installation
+77	Help/Automation software/Software installation/Automation Studio/Installation	7	Classic
+77	Help/Automation software/Software installation/Automation Studio/Installation	26	Adding software components
+64	Help/Automation software/Software installation/Automation Studio	9	Licensing
+74	Help/Automation software/Software installation/Automation Studio/Licensing	17	Automation Studio
+92	Help/Automation software/Software installation/Automation Studio/Licensing/Automation Studio	17	Offline licensing
+74	Help/Automation software/Software installation/Automation Studio/Licensing	26	Automation Studio (Legacy)
+64	Help/Automation software/Software installation/Automation Studio	12	Uninstalling
+64	Help/Automation software/Software installation/Automation Studio	18	Installation notes
+83	Help/Automation software/Software installation/Automation Studio/Installation notes	25	Automation Help installer
+83	Help/Automation software/Software installation/Automation Studio/Installation notes	28	Automation Runtime installer
+83	Help/Automation software/Software installation/Automation Studio/Installation notes	27	Automation Studio installer
+46	Help/Automation software/Software installation	3	PVI
+50	Help/Automation software/Software installation/PVI	19	System requirements
+70	Help/Automation software/Software installation/PVI/System requirements	17	PVI 4.3 and later
+70	Help/Automation software/Software installation/PVI/System requirements	13	PVI 4.0 - 4.2
+50	Help/Automation software/Software installation/PVI	12	Installation
+63	Help/Automation software/Software installation/PVI/Installation	26	Adding software components
+50	Help/Automation software/Software installation/PVI	16	Uninstalling PVI
+50	Help/Automation software/Software installation/PVI	13	PVI installer
+46	Help/Automation software/Software installation	12	SafeDESIGNER
+59	Help/Automation software/Software installation/SafeDESIGNER	19	System requirements
+79	Help/Automation software/Software installation/SafeDESIGNER/System requirements	16	SafeDESIGNER 4.3
+79	Help/Automation software/Software installation/SafeDESIGNER/System requirements	16	SafeDESIGNER 4.2
+59	Help/Automation software/Software installation/SafeDESIGNER	12	Installation
+59	Help/Automation software/Software installation/SafeDESIGNER	9	Licensing
+59	Help/Automation software/Software installation/SafeDESIGNER	12	Uninstalling
+59	Help/Automation software/Software installation/SafeDESIGNER	22	SafeDESIGNER installer
+46	Help/Automation software/Software installation	37	Automation Studio Target for Simulink
+84	Help/Automation software/Software installation/Automation Studio Target for Simulink	12	Installation
+84	Help/Automation software/Software installation/Automation Studio Target for Simulink	12	Uninstalling
+84	Help/Automation software/Software installation/Automation Studio Target for Simulink	9	Licensing
+24	Help/Automation software	16	Example projects
+41	Help/Automation software/Example projects	34	Example projects on the start page
+41	Help/Automation software/Example projects	13	CoffeeMachine
+55	Help/Automation software/Example projects/CoffeeMachine	19	Opening the project
+55	Help/Automation software/Example projects/CoffeeMachine	25	Starting ARsim simulation
+55	Help/Automation software/Example projects/CoffeeMachine	33	Configuring the online connection
+55	Help/Automation software/Example projects/CoffeeMachine	24	Transferring the project
+55	Help/Automation software/Example projects/CoffeeMachine	38	Establishing a VNC connection to ARsim
+55	Help/Automation software/Example projects/CoffeeMachine	35	Operating the CoffeeMachine program
+41	Help/Automation software/Example projects	20	Basic safety project
+62	Help/Automation software/Example projects/Basic safety project	19	Opening the project
+62	Help/Automation software/Example projects/Basic safety project	24	Transferring the project
+62	Help/Automation software/Example projects/Basic safety project	21	Starting SafeDESIGNER
+41	Help/Automation software/Example projects	48	Communication with OPC UA client function blocks
+24	Help/Automation software	19	Version information
+44	Help/Automation software/Version information	43	New functions in B&R Automation Studio 4.10
+88	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10	17	Automation Studio
+106	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio	35	Extended USB install drive creation
+106	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio	32	Accelerated OPC UA build process
+106	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio	18	Upgrade dialog box
+125	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio/Upgrade dialog box	37	New filter criterion "Currently used"
+125	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio/Upgrade dialog box	35	Uniform display of "Newest version"
+106	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio	33	Text editor for localizable texts
+106	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio	40	Speed Torque Chart support for ACOPOS P3
+106	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Studio	55	Multiline display of detailed information in the Logger
+88	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10	18	Automation Runtime
+107	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Runtime	61	Libraries for PROFINET IO, EtherCAT and CANopen (netX) slaves
+107	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Runtime	47	Modbus function code 22 - Modbus server support
+107	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Runtime	17	X90CP17x DeviceID
+107	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Runtime	31	Safe modular system - Hardening
+107	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/Automation Runtime	7	MPC3100
+88	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10	14	B&R Hypervisor
+103	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/B&R Hypervisor	30	Updated hyperthreading support
+103	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/B&R Hypervisor	69	API for rebooting and shutting down the complete system from the GPOS
+103	Help/Automation software/Version information/New functions in B&R Automation Studio 4.10/B&R Hypervisor	7	MPC3100
+44	Help/Automation software/Version information	36	Automation Software version overview
+44	Help/Automation software/Version information	42	Upgrading a project to a higher AS version
+44	Help/Automation software/Version information	20	Revision information
+44	Help/Automation software/Version information	28	Hardware no longer supported
+73	Help/Automation software/Version information/Hardware no longer supported	23	Automation Runtime 4.90
+24	Help/Automation software	19	Technology Guarding
+44	Help/Automation software/Technology Guarding	12	Introduction
+44	Help/Automation software/Technology Guarding	17	Compile a project
+44	Help/Automation software/Technology Guarding	26	Technology Guarding wizard
+71	Help/Automation software/Technology Guarding/Technology Guarding wizard	12	Installation
+84	Help/Automation software/Technology Guarding/Technology Guarding wizard/Installation	13	The workspace
+98	Help/Automation software/Technology Guarding/Technology Guarding wizard/Installation/The workspace	7	Options
+71	Help/Automation software/Technology Guarding/Technology Guarding wizard	15	Display details
+87	Help/Automation software/Technology Guarding/Technology Guarding wizard/Display details	12	Icon display
+87	Help/Automation software/Technology Guarding/Technology Guarding wizard/Display details	33	Display of missing/extra licenses
+71	Help/Automation software/Technology Guarding/Technology Guarding wizard	21	Operation (licensing)
+93	Help/Automation software/Technology Guarding/Technology Guarding wizard/Operation (licensing)	30	Online licensing on the dongle
+93	Help/Automation software/Technology Guarding/Technology Guarding wizard/Operation (licensing)	45	Offline dongle licensing using a license file
+93	Help/Automation software/Technology Guarding/Technology Guarding wizard/Operation (licensing)	18	Returning licenses
+93	Help/Automation software/Technology Guarding/Technology Guarding wizard/Operation (licensing)	28	Licensing for redundant CPUs
+93	Help/Automation software/Technology Guarding/Technology Guarding wizard/Operation (licensing)	23	Operating time counters
+44	Help/Automation software/Technology Guarding	14	Known problems

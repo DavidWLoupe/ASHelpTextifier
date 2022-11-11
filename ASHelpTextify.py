@@ -11,7 +11,8 @@ DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
 # CONTENT_FILENAME = "brhelpcontent_tiny.xml"
 CONTENT_FILENAME = "brhelpcontent_small.xml"
 OUTPUT_DIR_SUFFIX = "Help_Textified"
-PATH_AND_FILE_LOG = "paths_and_text.csv"
+PATH_AND_TEXT_LOG_FILENAME = "length_study/paths_and_text.csv"
+PATH_AND_TEXT_LOG_ENABLE = True
 ERROR_LOG = "errors.txt"
 
 baseDirAbsPath = DEFAULT_DATA_DIR
@@ -75,12 +76,13 @@ def processNode(node, path, orderID, tocPath):
             nodeTextClean = cleanText(node.attrib["Text"])
             print(tocPath + '/' + nodeTextClean)
 
-            # Record all paths and text, for length and trunction analysis
-            with open(PATH_AND_FILE_LOG, 'a', encoding="utf-8") as l:
-                l.write(str(len(tocPath)) + '\t')
-                l.write(tocPath + '\t')
-                l.write(str(len(nodeTextClean)) + '\t')
-                l.write(nodeTextClean + '\n')
+            if PATH_AND_TEXT_LOG_ENABLE:
+                # Record all paths and text, for length and trunction analysis
+                with open(PATH_AND_TEXT_LOG_FILENAME, 'a', encoding="utf-8") as l:
+                    l.write(str(len(tocPath)) + '\t')
+                    l.write(tocPath + '\t')
+                    l.write(str(len(nodeTextClean)) + '\t')
+                    l.write(nodeTextClean + '\n')
 
 
             if node.tag == "Section": 
@@ -157,7 +159,7 @@ def cleanPreviousFiles(outputDirAbsPath):
     os.mkdir(outputDirAbsPath)
 
     try:
-        os.remove(PATH_AND_FILE_LOG)
+        os.remove(PATH_AND_TEXT_LOG_FILENAME)
     except OSError:
         pass
 
