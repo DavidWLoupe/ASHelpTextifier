@@ -58,6 +58,13 @@ def cleanText(text):
     # Replaces non-space whitespace characters with space char
     return re.sub(r'[\r\n\t]', r' ', text)
 
+def extractASVersionFromPath(path):
+    # scan path for AS version (e.g. AS410)
+    rslt = re.search(r"[\\/](AS\d+)[\\/]", path)
+    if rslt:
+        return rslt[1]
+    else:
+        return "AS"
 
 def processNode(node, path, orderID, tocPath):
 
@@ -170,7 +177,7 @@ if __name__=="__main__":
     # Formalize path and file with os.path
     baseDirAbsPath = os.path.abspath(userSelectedPath)
     pfContentXml = os.path.join(baseDirAbsPath, CONTENT_FILENAME)
-    outputDirAbsPath = os.path.abspath(OUTPUT_DIR)
+    outputDirAbsPath = os.path.abspath(OUTPUT_DIR + "_" + extractASVersionFromPath(baseDirAbsPath))
     print(pfContentXml)
 
     cleanPreviousFiles(outputDirAbsPath)
