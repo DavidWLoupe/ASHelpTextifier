@@ -17,14 +17,14 @@ ERROR_LOG = "errors.txt"
 baseDirAbsPath = DEFAULT_DATA_DIR
 
 
-
 def handleError(error):
     # print(error)
     with open(ERROR_LOG, 'a', encoding="utf-8") as e:
         e.write(error + '\n')
 
-# Ref: https://github.com/Alir3z4/html2text/blob/master/docs/usage.md
-def parse(htmlSrc: str):
+
+def parse(htmlSrc: str): 
+    # Ref: https://github.com/Alir3z4/html2text/blob/master/docs/usage.md
     h = html2text.HTML2Text()
     h.ignore_links = True
     h.ignore_images = True
@@ -45,7 +45,7 @@ def deleteFolder(path: str):
 
 
 def textToValidDir(text: str):
-    # Remove characters that are not a-z A-Z 0-9, '_'
+    # Remove characters that are not valid for foldernames and replaces with '_'
     # https://kb.globalscape.com/Knowledgebase/10460/What-are-acceptable-characters-for-WAFSCDP-file-and-folder-names
     return re.sub(r'[^\w &\-\+=,\(\)\{\}]+', r'_', text)
 
@@ -116,7 +116,7 @@ def processNode(node, path, orderID, tocPath):
                     except Exception as e:
                         handleError("UNABLE TO OPEN FILE: <" + contentFile + "> for TOC doc <" + tocPath + nodeTextClean + '>, ' + str(e))
 
-                # Recursively process each node's children (this is where the magic happens)
+                # Recursively process each node's children (this is where the magic happens!)
                 for i,child in enumerate(node):
                     processNode(child, newPath, i, tocPath + '/' + nodeTextClean)
 
