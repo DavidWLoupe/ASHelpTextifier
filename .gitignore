@@ -1,6 +1,7 @@
 BrHelpDetransmogrified/
 *.code-workspace
-
+process runs/
+pytesting/
 
 
 ##################################################
