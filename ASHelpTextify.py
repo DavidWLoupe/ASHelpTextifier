@@ -14,6 +14,8 @@ OUTPUT_DIR_SUFFIX = "Help_Textified"
 PATH_AND_TEXT_LOG_FILENAME = "length_study/paths_and_text.csv"
 PATH_AND_TEXT_LOG_ENABLE = False
 PRINT_PROCESS_LOCATION = True
+CREATE_FULL_PATH_FILE_LIST = True
+FULL_TOC_PATH_FILE_LIST_FILENAME = "FullTocPathFileList.info"
 ERROR_LOG = "errors.txt"
 
 baseDirAbsPath = DEFAULT_DATA_DIR
@@ -87,7 +89,7 @@ def processNode(node, path, orderID, tocPath):
                         n.write("# PAGE "+ str(i) +":       \t" + child.attrib["Text"] + "\n")
             n.write("#\n")
 
-        # Recursively process each node's children (this is where the magic happens!)
+        # Recursively process each node's children
         for i,child in enumerate(node):
             processNode(child, path, i, 'Help')
 
@@ -100,6 +102,11 @@ def processNode(node, path, orderID, tocPath):
             
             if PRINT_PROCESS_LOCATION:
                 print(tocPath + '/' + nodeTextClean)
+
+            if CREATE_FULL_PATH_FILE_LIST:
+                # Record all paths and text, for length and trunction analysis
+                with open(FULL_TOC_PATH_FILE_LIST_FILENAME, 'a', encoding="utf-8") as l:
+                    l.write(tocPath + '/' + nodeTextClean + '\n')
 
             if PATH_AND_TEXT_LOG_ENABLE:
                 # Record all paths and text, for length and trunction analysis
@@ -190,6 +197,11 @@ def cleanPreviousFiles(outputDirAbsPath):
 
     try:
         os.remove(ERROR_LOG)
+    except OSError:
+        pass
+
+    try:
+        os.remove(FULL_TOC_PATH_FILE_LIST_FILENAME)
     except OSError:
         pass
 
