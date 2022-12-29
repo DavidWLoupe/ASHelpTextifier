@@ -12,7 +12,7 @@ CONTENT_FILENAME = "brhelpcontent.xml"
 # CONTENT_FILENAME = "brhelpcontent_small.xml"
 OUTPUT_DIR_SUFFIX = "Help_Textified"
 PATH_AND_TEXT_LOG_FILENAME = "length_study/paths_and_text.csv"
-PATH_AND_TEXT_LOG_ENABLE = False
+PATH_AND_TEXT_LOG_ENABLE = True
 PRINT_PROCESS_LOCATION = True
 CREATE_FULL_PATH_FILE_LIST = True
 FULL_TOC_PATH_FILE_LIST_FILENAME = "FullTocPathFileList.info"
@@ -152,7 +152,7 @@ def processNode(node, path, orderID, tocPath):
 
                 # Recursively process each node's children (this is where the magic happens!)
                 for i,child in enumerate(node):
-                    processNode(child, newPath, i, tocPath + '/' + nodeTextClean)
+                    processNode(child, newPath, i, tocPath + '//' + nodeTextClean)
 
 
             if node.tag == "Page":
