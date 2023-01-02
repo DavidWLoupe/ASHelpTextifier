@@ -17,6 +17,7 @@ PRINT_PROCESS_LOCATION = True
 CREATE_FULL_PATH_FILE_LIST = True
 FULL_TOC_PATH_FILE_LIST_FILENAME = "FullTocPathFileList.info"
 ERROR_LOG = "errors.txt"
+MAX_FOLDER_LEN = 11
 
 baseDirAbsPath = DEFAULT_DATA_DIR
 
@@ -70,6 +71,12 @@ def extractASVersionFromPath(path):
     else:
         return "AS"
 
+
+def shortenFolder(s):
+    shortened = s[:MAX_FOLDER_LEN]
+    return re.sub(r'\s*$', r'', shortened)    
+
+
 def processNode(node, path, orderID, tocPath):
 
 
@@ -120,7 +127,7 @@ def processNode(node, path, orderID, tocPath):
             if node.tag == "Section": 
                 
                 # create folder inside path
-                newPath = os.path.join(path, str(orderID))
+                newPath = os.path.join(path, shortenFolder(str(orderID) + ' ' + textToValidDir(nodeTextClean)))
                 os.mkdir(newPath)
                 
                 # Create file inside folder with contents of Section Article
