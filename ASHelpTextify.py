@@ -113,7 +113,7 @@ def processNode(node, path, orderID, tocPath):
             if CREATE_FULL_PATH_FILE_LIST:
                 # Record all paths and text, for length and trunction analysis
                 with open(FULL_TOC_PATH_FILE_LIST_FILENAME, 'a', encoding="utf-8") as l:
-                    l.write(tocPath + '/' + nodeTextClean + '\n')
+                    l.write(tocPath + '//' + nodeTextClean + '\n')
 
             if PATH_AND_TEXT_LOG_ENABLE:
                 # Record all paths and text, for length and trunction analysis
