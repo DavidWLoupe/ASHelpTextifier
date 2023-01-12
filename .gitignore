@@ -3,6 +3,8 @@ AS*Help_Textified/
 process runs/
 pytesting/
 venv/
+out/
+meta/
 
 
 ##################################################
