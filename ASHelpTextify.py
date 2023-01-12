@@ -1,6 +1,7 @@
 from tkinter.filedialog import askdirectory
 import os
 import shutil
+import datetime
 import xml.etree.ElementTree as ET
 import re
 import html2text
@@ -10,15 +11,18 @@ DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
 CONTENT_FILENAME = "brhelpcontent.xml"
 # CONTENT_FILENAME = "brhelpcontent_tiny.xml"
 # CONTENT_FILENAME = "brhelpcontent_small.xml"
-OUTPUT_DIR_SUFFIX = "Help_Textified"
+CONTENT_FILENAME = "brhelpcontent_small.xml"
+OUTPUT_DIR = ".\\out\\"
+OUTPUT_DIR_SUFFIX = "HelpText"
 GENERATE_TEXT_ENABLE = True
 PATH_AND_TEXT_LOG_ENABLE = False
-PATH_AND_TEXT_LOG_FILENAME = "length_study/paths_and_text.csv"
-PRINT_PROCESS_LOCATION = True
+PATH_AND_TEXT_LOG_DIR = "\\length_study\\"
+PATH_AND_TEXT_LOG_FILENAME = "paths_and_text.csv"
 CREATE_FULL_PATH_FILE_LIST = True
 FULL_TOC_PATH_FILE_LIST_FILENAME = "FullTocPathFileList.info"
 ERROR_LOG = "errors.txt"
 MAX_FOLDER_LEN = 11
+PRINT_PROCESS_LOCATION = True
 
 baseDirAbsPath = DEFAULT_DATA_DIR
 
@@ -72,6 +76,9 @@ def extractASVersionFromPath(path):
     else:
         return "AS"
 
+def getDTCode():
+    dt = datetime.datetime.now()
+    return str(dt.year)[2:] + str(dt.month).zfill(2) + str(dt.day).zfill(2) + str(dt.hour).zfill(2) + str(dt.minute).zfill(2)
 
 def shortenFolder(s):
     shortened = s[:MAX_FOLDER_LEN]
@@ -79,7 +86,6 @@ def shortenFolder(s):
 
 
 def processNode(node, path, orderID, tocPath):
-
 
     if (node.tag == "Help"):
         # Only one node (the root node) is tagged Help, so this only runs once at the top level
@@ -114,15 +120,13 @@ def processNode(node, path, orderID, tocPath):
 
             if CREATE_FULL_PATH_FILE_LIST:
                 # Record all paths and text, for length and trunction analysis
-                with open(FULL_TOC_PATH_FILE_LIST_FILENAME, 'a', encoding="utf-8") as l:
+                with open(fullTocPathFileListAbsDir, 'a', encoding="utf-8") as l:
                     l.write(tocPath + '//' + nodeTextClean + '\n')
 
             if PATH_AND_TEXT_LOG_ENABLE:
                 # Record all paths and text, for length and trunction analysis
-                with open(PATH_AND_TEXT_LOG_FILENAME, 'a', encoding="utf-8") as l:
-                    l.write(str(len(tocPath)) + '\t')
+                with open(pathAndTextDirAbsPath + '//' + PATH_AND_TEXT_LOG_FILENAME, 'a', encoding="utf-8") as l:
                     l.write(tocPath + '\t')
-                    l.write(str(len(nodeTextClean)) + '\t')
                     l.write(nodeTextClean + '\n')
 
 
@@ -199,7 +203,7 @@ def cleanPreviousFiles(outputDirAbsPath):
     # Delete previous implementation
     print("Deleting existing folder of textified text...")
     deleteFolder(outputDirAbsPath)
-    os.mkdir(outputDirAbsPath)
+    os.makedirs(outputDirAbsPath, exist_ok=True)
 
     try:
         os.remove(PATH_AND_TEXT_LOG_FILENAME)
@@ -227,10 +231,17 @@ if __name__=="__main__":
     # Formalize path and file with os.path
     baseDirAbsPath = os.path.abspath(userSelectedPath)
     pfContentXml = os.path.join(baseDirAbsPath, CONTENT_FILENAME)
-    outputDirAbsPath = os.path.abspath(extractASVersionFromPath(baseDirAbsPath) + OUTPUT_DIR_SUFFIX)
     print(pfContentXml)
-
+    outputDirAbsPath = os.path.abspath(OUTPUT_DIR + extractASVersionFromPath(baseDirAbsPath) + OUTPUT_DIR_SUFFIX + getDTCode())
     cleanPreviousFiles(outputDirAbsPath)
+
+    if PATH_AND_TEXT_LOG_ENABLE:
+        pathAndTextDirAbsPath = os.path.abspath(outputDirAbsPath + '//' + PATH_AND_TEXT_LOG_DIR)
+        os.makedirs(pathAndTextDirAbsPath)
+
+    if FULL_TOC_PATH_FILE_LIST_FILENAME:
+        fullTocPathFileListAbsDir = os.path.abspath(outputDirAbsPath +'//' + FULL_TOC_PATH_FILE_LIST_FILENAME)
+    
 
     # Parse Tree!
     tree = ET.parse(pfContentXml)
