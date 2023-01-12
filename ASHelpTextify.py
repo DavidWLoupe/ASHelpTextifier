@@ -11,6 +11,7 @@ CONTENT_FILENAME = "brhelpcontent.xml"
 # CONTENT_FILENAME = "brhelpcontent_tiny.xml"
 # CONTENT_FILENAME = "brhelpcontent_small.xml"
 OUTPUT_DIR_SUFFIX = "Help_Textified"
+GENERATE_TEXT_ENABLE = True
 PATH_AND_TEXT_LOG_ENABLE = False
 PATH_AND_TEXT_LOG_FILENAME = "length_study/paths_and_text.csv"
 PRINT_PROCESS_LOCATION = True
