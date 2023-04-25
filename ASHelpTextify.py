@@ -1,16 +1,16 @@
-from tkinter.filedialog import askdirectory
 import os
 import shutil
 import datetime
 import xml.etree.ElementTree as ET
 import re
 import html2text
+from tkinter.filedialog import askdirectory
 from bs4 import UnicodeDammit
 
 DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
 CONTENT_FILENAME = "brhelpcontent.xml"
-# CONTENT_FILENAME = "brhelpcontent_tiny.xml"
-# CONTENT_FILENAME = "brhelpcontent_small.xml"
+# CONTENT_FILENAME = "brhelpcontent_tiny.xml"                       # special-made file for testing
+# CONTENT_FILENAME = "brhelpcontent_small.xml"                      # special-made file for testing
 OUTPUT_DIR = ".\\out\\"
 OUTPUT_DIR_SUFFIX = "HelpText"
 GENERATE_TEXT_ENABLE = True                                         # If False, no text files will be generated (i.e. skip main function)
