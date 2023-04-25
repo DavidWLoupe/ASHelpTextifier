@@ -45,13 +45,14 @@ def parse(htmlSrc: str):
 
 def deleteFolder(path: str):
     dirAbsPath = os.path.abspath(path)
-    print(dirAbsPath)
+    #  print("Attempting to delete: ", dirAbsPath)
 
     if os.path.isdir(dirAbsPath):
         shutil.rmtree(dirAbsPath)
-        print("Folder Found and Deleted")
+        # print("Folder Found and Deleted")
     else:
-        print("Folder Not Found")
+        pass
+        # print("Folder Not Found")
 
 
 def textToValidDir(text: str):
@@ -201,7 +202,7 @@ def processNode(node, path, orderID, tocPath):
 def cleanPreviousFiles(outputDirAbsPath):
     
     # Delete previous implementation
-    print("Deleting existing folder of textified text...")
+    # print("Deleting existing folder of textified text...")
     deleteFolder(outputDirAbsPath)
     os.makedirs(outputDirAbsPath, exist_ok=True)
 
