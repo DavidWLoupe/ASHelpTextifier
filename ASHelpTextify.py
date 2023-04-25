@@ -1,4 +1,4 @@
-from tkinter.filedialog import askdirectory
+from tkinter.filedialog import askopenfile
 import os
 import shutil
 import datetime
@@ -8,9 +8,9 @@ import html2text
 from bs4 import UnicodeDammit
 
 DEFAULT_DATA_DIR = "C:\\BrAutomation\\AS410\\Help-en\\Data"
-CONTENT_FILENAME = "brhelpcontent.xml"
-# CONTENT_FILENAME = "brhelpcontent_tiny.xml"
-# CONTENT_FILENAME = "brhelpcontent_small.xml"
+# DEFAULT_DATA_FILE = "brhelpcontent.xml"
+# DEFAULT_DATA_FILE = "brhelpcontent_tiny.xml"
+DEFAULT_DATA_FILE = "brhelpcontent_small.xml"
 OUTPUT_DIR = ".\\out\\"
 OUTPUT_DIR_SUFFIX = "HelpText"
 GENERATE_TEXT_ENABLE = True                                         # If False, no text files will be generated (i.e. skip main function)
@@ -224,14 +224,14 @@ def cleanPreviousFiles(outputDirAbsPath):
 if __name__=="__main__":
     print("Executing textify main...")
 
-    # Prompt user to select Help Data directory, with a default
-    userSelectedPath = askdirectory(title='Select Help Data folder containing brhelpcontent.xml', initialdir=DEFAULT_DATA_DIR) # shows dialog box and return the path
-    print("User selected path:", userSelectedPath) 
-
-    # Formalize path and file with os.path
-    baseDirAbsPath = os.path.abspath(userSelectedPath)
-    pfContentXml = os.path.join(baseDirAbsPath, CONTENT_FILENAME)
-    print(pfContentXml)
+    # Prompt user to select Help Data Content XML, with a default
+    tioWrapUserSelectedContentXml = askopenfile(    title='Select Help content xml file...', 
+                                                    initialdir = DEFAULT_DATA_DIR, 
+                                                    initialfile=DEFAULT_DATA_FILE, 
+                                                    filetypes=[("datafile", "*.xml")]) # shows dialog box and return the file as TextIOWrapper object
+    pfContentXml = os.path.abspath(tioWrapUserSelectedContentXml.name)
+    print("User-selected content XML file:", pfContentXml)
+    baseDirAbsPath = os.path.dirname(pfContentXml)
     outputDirAbsPath = os.path.abspath(OUTPUT_DIR + extractASVersionFromPath(baseDirAbsPath) + OUTPUT_DIR_SUFFIX + getDTCode())
     cleanPreviousFiles(outputDirAbsPath)
 
