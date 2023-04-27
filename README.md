@@ -22,3 +22,7 @@ NOTE: Running took about 16 hours to process AS4.12 Help on my Parallels Windows
     - e.g. `C:\BrAutomation\AS411\Help-en\Data\`
 - Wait...
 - When done, the textified files will be in newly created folder `./out/ASHelpTestYYMMDDHHMM/`
+
+
+### Downloading pre-generated output
+- Links to Pre-generated textifications of AS Help can be found in the GitHub release assets
